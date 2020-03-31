@@ -1,0 +1,1 @@
+pyuic5 sensors.ui -o sensorsUI.py

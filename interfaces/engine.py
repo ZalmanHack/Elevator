@@ -3,7 +3,7 @@ from PyQt5.Qt import QTimer
 
 
 class Speed:
-    LOW = 50
+    LOW = 60
     FAST = 20
 
 
