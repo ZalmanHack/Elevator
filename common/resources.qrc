@@ -1,0 +1,19 @@
+<RCC>
+  <qresource prefix="main_interface">
+    <file>BG.png</file>
+  </qresource>
+  <qresource prefix="pointers">
+    <file>down_off.png</file>
+    <file>down_on.png</file>
+    <file>up_off.png</file>
+    <file>up_on.png</file>
+  </qresource>
+  <qresource prefix="shaft">
+    <file>counterweight.png</file>
+    <file>cab.png</file>
+    <file>cab_cable.png</file>
+    <file>counterweight_cable.png</file>
+    <file>floor.png</file>
+    <file>shaft_bottom.png</file>
+  </qresource>
+</RCC>

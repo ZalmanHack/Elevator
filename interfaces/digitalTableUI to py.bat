@@ -1,0 +1,1 @@
+pyuic5 digitalTable.ui -o digitalTableUI.py

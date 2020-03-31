@@ -1,0 +1,1 @@
+pyuic5 liftShaft.ui -o liftShaftUI.py
