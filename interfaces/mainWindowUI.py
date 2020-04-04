@@ -13,7 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(811, 330)
+        MainWindow.resize(840, 636)
         MainWindow.setStyleSheet("QWidget#centralwidget {\n"
 "border-image: url(:/main_interface/BG.png);\n"
 "}")
@@ -34,8 +34,8 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.main_widget.sizePolicy().hasHeightForWidth())
         self.main_widget.setSizePolicy(sizePolicy)
-        self.main_widget.setMinimumSize(QtCore.QSize(300, 300))
-        self.main_widget.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.main_widget.setMinimumSize(QtCore.QSize(528, 606))
+        self.main_widget.setMaximumSize(QtCore.QSize(528, 606))
         self.main_widget.setStyleSheet("QWidget#main_widget {\n"
 "    border-radius: 10px;\n"
 "    background-color: rgb(112, 112, 112);\n"
@@ -52,5 +52,4 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-
 import common.resources_rc

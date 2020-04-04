@@ -51,7 +51,7 @@ class Ui_LiftShaft(object):
         self.floor_btn_1.setMaximumSize(QtCore.QSize(20, 20))
         self.floor_btn_1.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.floor_btn_1.setStyleSheet("QPushButton {\n"
-"    background-color: rgb(255, 0, 0);\n"
+"    background-color: rgb(100, 100, 100);\n"
 "    border-style: outset;\n"
 "    border-radius: 10px;\n"
 "    border-width: 3px;\n"
@@ -59,7 +59,7 @@ class Ui_LiftShaft(object):
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: rgb(200, 0, 0);\n"
+"    background-color: rgb(0, 0, 0);\n"
 " }\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -78,7 +78,7 @@ class Ui_LiftShaft(object):
         self.floor_btn_3.setMaximumSize(QtCore.QSize(20, 20))
         self.floor_btn_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.floor_btn_3.setStyleSheet("QPushButton {\n"
-"    background-color: rgb(255, 0, 0);\n"
+"    background-color: rgb(100, 100, 100);\n"
 "    border-style: outset;\n"
 "    border-radius: 10px;\n"
 "    border-width: 3px;\n"
@@ -86,7 +86,7 @@ class Ui_LiftShaft(object):
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: rgb(200, 0, 0);\n"
+"    background-color: rgb(0, 0, 0);\n"
 " }\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -180,7 +180,7 @@ class Ui_LiftShaft(object):
         self.floor_btn_5.setMaximumSize(QtCore.QSize(20, 20))
         self.floor_btn_5.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.floor_btn_5.setStyleSheet("QPushButton {\n"
-"    background-color: rgb(255, 0, 0);\n"
+"    background-color: rgb(100, 100, 100);\n"
 "    border-style: outset;\n"
 "    border-radius: 10px;\n"
 "    border-width: 3px;\n"
@@ -188,7 +188,7 @@ class Ui_LiftShaft(object):
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: rgb(200, 0, 0);\n"
+"    background-color: rgb(0, 0, 0);\n"
 " }\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -220,7 +220,7 @@ class Ui_LiftShaft(object):
         self.floor_btn_2.setMaximumSize(QtCore.QSize(20, 20))
         self.floor_btn_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.floor_btn_2.setStyleSheet("QPushButton {\n"
-"    background-color: rgb(255, 0, 0);\n"
+"    background-color: rgb(100, 100, 100);\n"
 "    border-style: outset;\n"
 "    border-radius: 10px;\n"
 "    border-width: 3px;\n"
@@ -228,7 +228,7 @@ class Ui_LiftShaft(object):
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: rgb(200, 0, 0);\n"
+"    background-color: rgb(0, 0, 0);\n"
 " }\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -247,7 +247,7 @@ class Ui_LiftShaft(object):
         self.floor_btn_4.setMaximumSize(QtCore.QSize(20, 20))
         self.floor_btn_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.floor_btn_4.setStyleSheet("QPushButton {\n"
-"    background-color: rgb(255, 0, 0);\n"
+"    background-color: rgb(100, 100, 100);\n"
 "    border-style: outset;\n"
 "    border-radius: 10px;\n"
 "    border-width: 3px;\n"
@@ -255,7 +255,7 @@ class Ui_LiftShaft(object):
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color: rgb(200, 0, 0);\n"
+"    background-color: rgb(0, 0, 0);\n"
 " }\n"
 "\n"
 "QPushButton:pressed {\n"

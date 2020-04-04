@@ -79,7 +79,7 @@ class Sensors(QWidget, Ui_sensors):
 
     # проверка вхождения в зону аерхнего или нижнего стопора
     def _check_stoppers(self, len_cable: int = 0):
-        if len_cable == self.floor_height * 4 or len_cable == 0:
+        if len_cable >= self.floor_height * 4 or len_cable <= 0:
             self.checked_stoppers.emit()
 
     # проверка вхождения в зону конкретного этажа

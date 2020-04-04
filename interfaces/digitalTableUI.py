@@ -24,13 +24,13 @@ class Ui_digital_table(object):
         self.central.setMinimumSize(QtCore.QSize(360, 118))
         self.central.setMaximumSize(QtCore.QSize(360, 118))
         self.central.setStyleSheet("QWidget#central {\n"
-                                   "    background-color: qlineargradient(spread:pad, x1:0.216, y1:1, x2:1, y2:0, stop:0 rgba(211, 183, 49, 255), stop:0.494318 rgba(234, 210, 98, 255), stop:0.568182 rgba(242, 239, 224, 255), stop:0.784091 rgba(242, 203, 19, 255), stop:1 rgba(242, 218, 100, 255));\n"
-                                   "\n"
-                                   "    border-style: outset;\n"
-                                   "    border-radius: 10px;\n"
-                                   "    border-width: 3px;\n"
-                                   "    border-color: rgb(223, 186, 17);\n"
-                                   "}")
+"    background-color: qlineargradient(spread:pad, x1:0.216, y1:1, x2:1, y2:0, stop:0 rgba(211, 183, 49, 255), stop:0.494318 rgba(234, 210, 98, 255), stop:0.568182 rgba(242, 239, 224, 255), stop:0.784091 rgba(242, 203, 19, 255), stop:1 rgba(242, 218, 100, 255));\n"
+"\n"
+"    border-style: outset;\n"
+"    border-radius: 10px;\n"
+"    border-width: 3px;\n"
+"    border-color: rgb(223, 186, 17);\n"
+"}")
         self.central.setObjectName("central")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.central)
         self.verticalLayout_2.setContentsMargins(10, 8, 10, 8)
@@ -57,8 +57,8 @@ class Ui_digital_table(object):
         self.down_lb.setMinimumSize(QtCore.QSize(30, 30))
         self.down_lb.setMaximumSize(QtCore.QSize(30, 30))
         self.down_lb.setStyleSheet("QLabel {\n"
-                                   "border-image: url(:/pointers/down_off.png);\n"
-                                   "}")
+"border-image: url(:/pointers/down_off.png);\n"
+"}")
         self.down_lb.setText("")
         self.down_lb.setAlignment(QtCore.Qt.AlignCenter)
         self.down_lb.setObjectName("down_lb")
@@ -67,13 +67,13 @@ class Ui_digital_table(object):
         self.floor_lb_1.setMinimumSize(QtCore.QSize(56, 30))
         self.floor_lb_1.setMaximumSize(QtCore.QSize(56, 30))
         self.floor_lb_1.setStyleSheet("QLabel {\n"
-                                      "    background-color: rgb(83, 83, 83);\n"
-                                      "    font: 75 15pt \"MS Shell Dlg 2\";\n"
-                                      "    color: rgb(150, 150, 150);\n"
-                                      "    border-style: outset;\n"
-                                      "    border-width: 3px;\n"
-                                      "    border-color: black;\n"
-                                      "}")
+"    background-color: rgb(83, 83, 83);\n"
+"    font: 75 15pt \"MS Shell Dlg 2\";\n"
+"    color: rgb(150, 150, 150);\n"
+"    border-style: outset;\n"
+"    border-width: 3px;\n"
+"    border-color: black;\n"
+"}")
         self.floor_lb_1.setAlignment(QtCore.Qt.AlignCenter)
         self.floor_lb_1.setObjectName("floor_lb_1")
         self.horizontalLayout.addWidget(self.floor_lb_1)
@@ -81,13 +81,13 @@ class Ui_digital_table(object):
         self.floor_lb_2.setMinimumSize(QtCore.QSize(56, 30))
         self.floor_lb_2.setMaximumSize(QtCore.QSize(56, 30))
         self.floor_lb_2.setStyleSheet("QLabel {\n"
-                                      "    background-color: rgb(83, 83, 83);\n"
-                                      "    font: 75 15pt \"MS Shell Dlg 2\";\n"
-                                      "    color: rgb(150, 150, 150);\n"
-                                      "    border-style: outset;\n"
-                                      "    border-width: 3px;\n"
-                                      "    border-color: black;\n"
-                                      "}")
+"    background-color: rgb(83, 83, 83);\n"
+"    font: 75 15pt \"MS Shell Dlg 2\";\n"
+"    color: rgb(150, 150, 150);\n"
+"    border-style: outset;\n"
+"    border-width: 3px;\n"
+"    border-color: black;\n"
+"}")
         self.floor_lb_2.setAlignment(QtCore.Qt.AlignCenter)
         self.floor_lb_2.setObjectName("floor_lb_2")
         self.horizontalLayout.addWidget(self.floor_lb_2)
@@ -95,13 +95,13 @@ class Ui_digital_table(object):
         self.floor_lb_3.setMinimumSize(QtCore.QSize(56, 30))
         self.floor_lb_3.setMaximumSize(QtCore.QSize(56, 30))
         self.floor_lb_3.setStyleSheet("QLabel {\n"
-                                      "    background-color: rgb(83, 83, 83);\n"
-                                      "    font: 75 15pt \"MS Shell Dlg 2\";\n"
-                                      "    color: rgb(150, 150, 150);\n"
-                                      "    border-style: outset;\n"
-                                      "    border-width: 3px;\n"
-                                      "    border-color: black;\n"
-                                      "}")
+"    background-color: rgb(83, 83, 83);\n"
+"    font: 75 15pt \"MS Shell Dlg 2\";\n"
+"    color: rgb(150, 150, 150);\n"
+"    border-style: outset;\n"
+"    border-width: 3px;\n"
+"    border-color: black;\n"
+"}")
         self.floor_lb_3.setAlignment(QtCore.Qt.AlignCenter)
         self.floor_lb_3.setObjectName("floor_lb_3")
         self.horizontalLayout.addWidget(self.floor_lb_3)
@@ -109,13 +109,13 @@ class Ui_digital_table(object):
         self.floor_lb_4.setMinimumSize(QtCore.QSize(56, 30))
         self.floor_lb_4.setMaximumSize(QtCore.QSize(56, 30))
         self.floor_lb_4.setStyleSheet("QLabel {\n"
-                                      "    background-color: rgb(83, 83, 83);\n"
-                                      "    font: 75 15pt \"MS Shell Dlg 2\";\n"
-                                      "    color: rgb(150, 150, 150);\n"
-                                      "    border-style: outset;\n"
-                                      "    border-width: 3px;\n"
-                                      "    border-color: black;\n"
-                                      "}")
+"    background-color: rgb(83, 83, 83);\n"
+"    font: 75 15pt \"MS Shell Dlg 2\";\n"
+"    color: rgb(150, 150, 150);\n"
+"    border-style: outset;\n"
+"    border-width: 3px;\n"
+"    border-color: black;\n"
+"}")
         self.floor_lb_4.setAlignment(QtCore.Qt.AlignCenter)
         self.floor_lb_4.setObjectName("floor_lb_4")
         self.horizontalLayout.addWidget(self.floor_lb_4)
@@ -123,13 +123,13 @@ class Ui_digital_table(object):
         self.floor_lb_5.setMinimumSize(QtCore.QSize(56, 30))
         self.floor_lb_5.setMaximumSize(QtCore.QSize(56, 30))
         self.floor_lb_5.setStyleSheet("QLabel {\n"
-                                      "    background-color: rgb(83, 83, 83);\n"
-                                      "    font: 75 15pt \"MS Shell Dlg 2\";\n"
-                                      "    color: rgb(150, 150, 150);\n"
-                                      "    border-style: outset;\n"
-                                      "    border-width: 3px;\n"
-                                      "    border-color: black;\n"
-                                      "}")
+"    background-color: rgb(83, 83, 83);\n"
+"    font: 75 15pt \"MS Shell Dlg 2\";\n"
+"    color: rgb(150, 150, 150);\n"
+"    border-style: outset;\n"
+"    border-width: 3px;\n"
+"    border-color: black;\n"
+"}")
         self.floor_lb_5.setAlignment(QtCore.Qt.AlignCenter)
         self.floor_lb_5.setObjectName("floor_lb_5")
         self.horizontalLayout.addWidget(self.floor_lb_5)
@@ -137,8 +137,8 @@ class Ui_digital_table(object):
         self.up_lb.setMinimumSize(QtCore.QSize(30, 30))
         self.up_lb.setMaximumSize(QtCore.QSize(30, 30))
         self.up_lb.setStyleSheet("QLabel {\n"
-                                 "border-image: url(:/pointers/up_off.png);\n"
-                                 "}")
+"border-image: url(:/pointers/up_off.png);\n"
+"}")
         self.up_lb.setText("")
         self.up_lb.setAlignment(QtCore.Qt.AlignCenter)
         self.up_lb.setObjectName("up_lb")
@@ -160,20 +160,20 @@ class Ui_digital_table(object):
         self.floor_btn_1.setMaximumSize(QtCore.QSize(20, 20))
         self.floor_btn_1.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.floor_btn_1.setStyleSheet("QPushButton {\n"
-                                       "    background-color: rgb(255, 0, 0);\n"
-                                       "    border-style: outset;\n"
-                                       "    border-radius: 10px;\n"
-                                       "    border-width: 3px;\n"
-                                       "    border-color: rgb(223, 186, 17);\n"
-                                       "}\n"
-                                       "\n"
-                                       "QPushButton:hover {\n"
-                                       "    background-color: rgb(200, 0, 0);\n"
-                                       " }\n"
-                                       "\n"
-                                       "QPushButton:pressed {\n"
-                                       "     border-width: 4px;\n"
-                                       " }")
+"    background-color: rgb(100, 100, 100);\n"
+"    border-style: outset;\n"
+"    border-radius: 10px;\n"
+"    border-width: 3px;\n"
+"    border-color: rgb(223, 186, 17);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(0, 0, 0);\n"
+" }\n"
+"\n"
+"QPushButton:pressed {\n"
+"     border-width: 4px;\n"
+" }")
         self.floor_btn_1.setText("")
         self.floor_btn_1.setObjectName("floor_btn_1")
         self.horizontalLayout_3.addWidget(self.floor_btn_1)
@@ -187,20 +187,20 @@ class Ui_digital_table(object):
         self.floor_btn_2.setMaximumSize(QtCore.QSize(20, 20))
         self.floor_btn_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.floor_btn_2.setStyleSheet("QPushButton {\n"
-                                       "    background-color: rgb(255, 0, 0);\n"
-                                       "    border-style: outset;\n"
-                                       "    border-radius: 10px;\n"
-                                       "    border-width: 3px;\n"
-                                       "    border-color: rgb(223, 186, 17);\n"
-                                       "}\n"
-                                       "\n"
-                                       "QPushButton:hover {\n"
-                                       "    background-color: rgb(200, 0, 0);\n"
-                                       " }\n"
-                                       "\n"
-                                       "QPushButton:pressed {\n"
-                                       "     border-width: 4px;\n"
-                                       " }")
+"    background-color: rgb(100, 100, 100);\n"
+"    border-style: outset;\n"
+"    border-radius: 10px;\n"
+"    border-width: 3px;\n"
+"    border-color: rgb(223, 186, 17);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(0, 0, 0);\n"
+" }\n"
+"\n"
+"QPushButton:pressed {\n"
+"     border-width: 4px;\n"
+" }")
         self.floor_btn_2.setText("")
         self.floor_btn_2.setObjectName("floor_btn_2")
         self.horizontalLayout_3.addWidget(self.floor_btn_2)
@@ -214,20 +214,20 @@ class Ui_digital_table(object):
         self.floor_btn_3.setMaximumSize(QtCore.QSize(20, 20))
         self.floor_btn_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.floor_btn_3.setStyleSheet("QPushButton {\n"
-                                       "    background-color: rgb(255, 0, 0);\n"
-                                       "    border-style: outset;\n"
-                                       "    border-radius: 10px;\n"
-                                       "    border-width: 3px;\n"
-                                       "    border-color: rgb(223, 186, 17);\n"
-                                       "}\n"
-                                       "\n"
-                                       "QPushButton:hover {\n"
-                                       "    background-color: rgb(200, 0, 0);\n"
-                                       " }\n"
-                                       "\n"
-                                       "QPushButton:pressed {\n"
-                                       "     border-width: 4px;\n"
-                                       " }")
+"    background-color: rgb(100, 100, 100);\n"
+"    border-style: outset;\n"
+"    border-radius: 10px;\n"
+"    border-width: 3px;\n"
+"    border-color: rgb(223, 186, 17);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(0, 0, 0);\n"
+" }\n"
+"\n"
+"QPushButton:pressed {\n"
+"     border-width: 4px;\n"
+" }")
         self.floor_btn_3.setText("")
         self.floor_btn_3.setObjectName("floor_btn_3")
         self.horizontalLayout_3.addWidget(self.floor_btn_3)
@@ -241,20 +241,20 @@ class Ui_digital_table(object):
         self.floor_btn_4.setMaximumSize(QtCore.QSize(20, 20))
         self.floor_btn_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.floor_btn_4.setStyleSheet("QPushButton {\n"
-                                       "    background-color: rgb(255, 0, 0);\n"
-                                       "    border-style: outset;\n"
-                                       "    border-radius: 10px;\n"
-                                       "    border-width: 3px;\n"
-                                       "    border-color: rgb(223, 186, 17);\n"
-                                       "}\n"
-                                       "\n"
-                                       "QPushButton:hover {\n"
-                                       "    background-color: rgb(200, 0, 0);\n"
-                                       " }\n"
-                                       "\n"
-                                       "QPushButton:pressed {\n"
-                                       "     border-width: 4px;\n"
-                                       " }")
+"    background-color: rgb(100, 100, 100);\n"
+"    border-style: outset;\n"
+"    border-radius: 10px;\n"
+"    border-width: 3px;\n"
+"    border-color: rgb(223, 186, 17);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(0, 0, 0);\n"
+" }\n"
+"\n"
+"QPushButton:pressed {\n"
+"     border-width: 4px;\n"
+" }")
         self.floor_btn_4.setText("")
         self.floor_btn_4.setObjectName("floor_btn_4")
         self.horizontalLayout_3.addWidget(self.floor_btn_4)
@@ -268,20 +268,20 @@ class Ui_digital_table(object):
         self.floor_btn_5.setMaximumSize(QtCore.QSize(20, 20))
         self.floor_btn_5.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.floor_btn_5.setStyleSheet("QPushButton {\n"
-                                       "    background-color: rgb(255, 0, 0);\n"
-                                       "    border-style: outset;\n"
-                                       "    border-radius: 10px;\n"
-                                       "    border-width: 3px;\n"
-                                       "    border-color: rgb(223, 186, 17);\n"
-                                       "}\n"
-                                       "\n"
-                                       "QPushButton:hover {\n"
-                                       "    background-color: rgb(200, 0, 0);\n"
-                                       " }\n"
-                                       "\n"
-                                       "QPushButton:pressed {\n"
-                                       "     border-width: 4px;\n"
-                                       " }")
+"    background-color: rgb(100, 100, 100);\n"
+"    border-style: outset;\n"
+"    border-radius: 10px;\n"
+"    border-width: 3px;\n"
+"    border-color: rgb(223, 186, 17);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(0, 0, 0);\n"
+" }\n"
+"\n"
+"QPushButton:pressed {\n"
+"     border-width: 4px;\n"
+" }")
         self.floor_btn_5.setText("")
         self.floor_btn_5.setObjectName("floor_btn_5")
         self.horizontalLayout_3.addWidget(self.floor_btn_5)
@@ -300,6 +300,5 @@ class Ui_digital_table(object):
         self.floor_lb_3.setText(_translate("digital_table", "3"))
         self.floor_lb_4.setText(_translate("digital_table", "4"))
         self.floor_lb_5.setText(_translate("digital_table", "5"))
-
-
 import common.resources_rc
+

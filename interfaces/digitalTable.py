@@ -76,3 +76,38 @@ class DigitalTable(QWidget, Ui_digital_table):
                                             "	border-width: 3px;"
                                             "	border-color: black;"
                                             "}")
+
+    @pyqtSlot(bytes, bool)
+    def set_state_btn(self, floor: bytes, state: bool = False):
+        if state:
+            color = [255, 0, 0]
+            hover_color = [200, 0, 0]
+        else:
+            color = [100, 100, 100]
+            hover_color = [0, 0, 0]
+        styleSheet = "QPushButton {\n" \
+                     "    background-color: rgb(" + str(color[0]) + "," + str(color[1]) + "," + str(color[2]) + ");\n" \
+                     "    border-style: outset;\n" \
+                     "    border-radius: 10px;\n" \
+                     "    border-width: 3px;\n" \
+                     "    border-color: rgb(223, 186, 17);\n" \
+                     "}\n" \
+                     "\n" \
+                     "QPushButton:hover {\n" \
+                     "background-color: " \
+                     "rgb(" + str(hover_color[0]) + "," + str(hover_color[1]) + "," + str(hover_color[2]) + ");\n" \
+                     " }\n" \
+                     "\n" \
+                     "QPushButton:pressed {\n" \
+                     "     border-width: 4px;\n" \
+                     " }"
+        if floor == TSensors.One:
+            self.floor_btn_1.setStyleSheet(styleSheet)
+        elif floor == TSensors.Two:
+            self.floor_btn_2.setStyleSheet(styleSheet)
+        elif floor == TSensors.Three:
+            self.floor_btn_3.setStyleSheet(styleSheet)
+        elif floor == TSensors.Four:
+            self.floor_btn_4.setStyleSheet(styleSheet)
+        elif floor == TSensors.Five:
+            self.floor_btn_5.setStyleSheet(styleSheet)

@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtCore import QObject, pyqtSignal, pyqtSlot
-from PyQt5.Qt import QMainWindow, QHBoxLayout, QVBoxLayout, QGridLayout, QPushButton, QSlider, Qt
+from PyQt5.Qt import QMainWindow, QHBoxLayout, QVBoxLayout, QSpacerItem,QSizePolicy, QGridLayout, QPushButton, QSlider, Qt
 from .engine import Engine
 from .liftShaft import LiftShaft
 from .sensors import Sensors
@@ -43,10 +43,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.gLayout.setHorizontalSpacing(8)
         self.gLayout.setVerticalSpacing(8)
         self.gLayout.addWidget(self.liftShaft, 0, 0, 4, 1)
-        self.gLayout.addWidget(self.sensors, 0, 1, 1, 3)
-        self.gLayout.addWidget(self.digitTable, 1, 1, 1, 3)
+        self.gLayout.addWidget(self.digitTable, 0, 1, 1, 3)
+        self.gLayout.addWidget(self.sensors, 1, 1, 1, 3)
         self.gLayout.addWidget(QPushButton("4"), 2, 1, 1, 1)
-        self.gLayout.addWidget(QPushButton("5"), 2, 2, 1, 1)
+        self.gLayout.addItem(QSpacerItem(0, 0, QSizePolicy.Minimum, QSizePolicy.MinimumExpanding), 2, 2, 1, 1)
         self.gLayout.addWidget(QPushButton("6"), 2, 3, 1, 1)
         self.gLayout.addWidget(QPushButton("7"), 3, 1, 1, 3)
 
@@ -71,6 +71,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.computer.engine_run.connect(self.engine.run)
         self.computer.engine_stop.connect(self.engine.stop)
         self.computer.set_light_state.connect(self.sensors.set_light_state)
+        self.computer.set_btn_cab_state.connect(self.digitTable.set_state_btn)
+        self.computer.set_btn_floor_state.connect(self.liftShaft.set_state_btn)
 
     def _init_connects_digitTable(self):
         self.digitTable.calling_lift.connect(self.computer.calling_on_cab)
