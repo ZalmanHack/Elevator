@@ -13,21 +13,21 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_sensors(object):
     def setupUi(self, sensors):
         sensors.setObjectName("sensors")
-        sensors.resize(360, 242)
+        sensors.resize(360, 291)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(sensors.sizePolicy().hasHeightForWidth())
         sensors.setSizePolicy(sizePolicy)
-        sensors.setMinimumSize(QtCore.QSize(360, 242))
-        sensors.setMaximumSize(QtCore.QSize(360, 242))
+        sensors.setMinimumSize(QtCore.QSize(360, 291))
+        sensors.setMaximumSize(QtCore.QSize(360, 291))
         self.verticalLayout = QtWidgets.QVBoxLayout(sensors)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName("verticalLayout")
         self.central = QtWidgets.QWidget(sensors)
-        self.central.setMinimumSize(QtCore.QSize(360, 242))
-        self.central.setMaximumSize(QtCore.QSize(360, 242))
+        self.central.setMinimumSize(QtCore.QSize(360, 291))
+        self.central.setMaximumSize(QtCore.QSize(360, 291))
         self.central.setStyleSheet("QWidget#central {\n"
 "    background-color: qlineargradient(spread:pad, x1:0.216, y1:1, x2:1, y2:0, stop:0 rgba(211, 183, 49, 255), stop:0.494318 rgba(234, 210, 98, 255), stop:0.568182 rgba(242, 239, 224, 255), stop:0.784091 rgba(242, 203, 19, 255), stop:1 rgba(242, 218, 100, 255));\n"
 "\n"
@@ -41,15 +41,106 @@ class Ui_sensors(object):
         self.verticalLayout_3.setContentsMargins(10, 8, 10, 8)
         self.verticalLayout_3.setSpacing(8)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.horizontalLayout_6 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_6.setSpacing(0)
+        self.horizontalLayout_6.setObjectName("horizontalLayout_6")
         self.label = QtWidgets.QLabel(self.central)
-        self.label.setMinimumSize(QtCore.QSize(340, 36))
+        self.label.setMinimumSize(QtCore.QSize(0, 36))
         self.label.setMaximumSize(QtCore.QSize(340, 36))
         font = QtGui.QFont()
         font.setPointSize(14)
         self.label.setFont(font)
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
-        self.verticalLayout_3.addWidget(self.label)
+        self.horizontalLayout_6.addWidget(self.label)
+        self.reset_btn = QtWidgets.QPushButton(self.central)
+        self.reset_btn.setMinimumSize(QtCore.QSize(23, 0))
+        self.reset_btn.setMaximumSize(QtCore.QSize(100, 16777215))
+        self.reset_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.reset_btn.setStyleSheet("QPushButton {\n"
+"    border-radius: 8px;\n"
+"    background-color: rgb(0, 0, 0);\n"
+"    font: 75 14pt \"MS Shell Dlg 2\";\n"
+"    color: rgb(255, 0, 0);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(50, 50, 50);\n"
+"}")
+        self.reset_btn.setObjectName("reset_btn")
+        self.horizontalLayout_6.addWidget(self.reset_btn)
+        self.verticalLayout_3.addLayout(self.horizontalLayout_6)
+        self.widget_2 = QtWidgets.QWidget(self.central)
+        self.widget_2.setStyleSheet("QWidget#widget_2 {\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(112, 112, 112);\n"
+"}")
+        self.widget_2.setObjectName("widget_2")
+        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.widget_2)
+        self.verticalLayout_5.setContentsMargins(8, 8, 8, 8)
+        self.verticalLayout_5.setSpacing(10)
+        self.verticalLayout_5.setObjectName("verticalLayout_5")
+        self.horizontalLayout_15 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_15.setSpacing(10)
+        self.horizontalLayout_15.setObjectName("horizontalLayout_15")
+        self.label_32 = QtWidgets.QLabel(self.widget_2)
+        self.label_32.setStyleSheet("    font: 75 14pt \"MS Shell Dlg 2\";\n"
+"    color: rgb(240, 240, 240);")
+        self.label_32.setObjectName("label_32")
+        self.horizontalLayout_15.addWidget(self.label_32)
+        self.light_init = QtWidgets.QLabel(self.widget_2)
+        self.light_init.setMinimumSize(QtCore.QSize(16, 16))
+        self.light_init.setMaximumSize(QtCore.QSize(16, 16))
+        self.light_init.setStyleSheet("QLabel {\n"
+"    border-style: outset;\n"
+"    border-radius: 8px;\n"
+"    border-width: 2px;\n"
+"    border-color: rgb(0, 0, 0);\n"
+"    background-color: rgb(255, 0, 0)\n"
+"}")
+        self.light_init.setText("")
+        self.light_init.setObjectName("light_init")
+        self.horizontalLayout_15.addWidget(self.light_init)
+        self.label_34 = QtWidgets.QLabel(self.widget_2)
+        self.label_34.setStyleSheet("    font: 75 14pt \"MS Shell Dlg 2\";\n"
+"    color: rgb(240, 240, 240);")
+        self.label_34.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_34.setObjectName("label_34")
+        self.horizontalLayout_15.addWidget(self.label_34)
+        self.light_normal = QtWidgets.QLabel(self.widget_2)
+        self.light_normal.setMinimumSize(QtCore.QSize(16, 16))
+        self.light_normal.setMaximumSize(QtCore.QSize(16, 16))
+        self.light_normal.setStyleSheet("QLabel {\n"
+"    border-style: outset;\n"
+"    border-radius: 8px;\n"
+"    border-width: 2px;\n"
+"    border-color: rgb(0, 0, 0);\n"
+"    background-color: rgb(255, 0, 0)\n"
+"}")
+        self.light_normal.setText("")
+        self.light_normal.setObjectName("light_normal")
+        self.horizontalLayout_15.addWidget(self.light_normal)
+        self.label_35 = QtWidgets.QLabel(self.widget_2)
+        self.label_35.setStyleSheet("    font: 75 14pt \"MS Shell Dlg 2\";\n"
+"    color: rgb(240, 240, 240);")
+        self.label_35.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_35.setObjectName("label_35")
+        self.horizontalLayout_15.addWidget(self.label_35)
+        self.light_crash = QtWidgets.QLabel(self.widget_2)
+        self.light_crash.setMinimumSize(QtCore.QSize(16, 16))
+        self.light_crash.setMaximumSize(QtCore.QSize(16, 16))
+        self.light_crash.setStyleSheet("QLabel {\n"
+"    border-style: outset;\n"
+"    border-radius: 8px;\n"
+"    border-width: 2px;\n"
+"    border-color: rgb(0, 0, 0);\n"
+"    background-color: rgb(255, 0, 0)\n"
+"}")
+        self.light_crash.setText("")
+        self.light_crash.setObjectName("light_crash")
+        self.horizontalLayout_15.addWidget(self.light_crash)
+        self.verticalLayout_5.addLayout(self.horizontalLayout_15)
+        self.verticalLayout_3.addWidget(self.widget_2)
         self.widget = QtWidgets.QWidget(self.central)
         self.widget.setStyleSheet("QWidget#widget {\n"
 "    border-radius: 10px;\n"
@@ -319,15 +410,19 @@ class Ui_sensors(object):
     def retranslateUi(self, sensors):
         _translate = QtCore.QCoreApplication.translate
         sensors.setWindowTitle(_translate("sensors", "Form"))
-        self.label.setText(_translate("sensors", "Датчики"))
+        self.label.setText(_translate("sensors", "Компьютер"))
+        self.reset_btn.setText(_translate("sensors", "Рестарт"))
+        self.label_32.setText(_translate("sensors", "калибровка"))
+        self.label_34.setText(_translate("sensors", "работа"))
+        self.label_35.setText(_translate("sensors", "авария"))
         self.label_14.setText(_translate("sensors", "стопоры"))
         self.label_12.setText(_translate("sensors", "предварительное торможение"))
         self.label_13.setText(_translate("sensors", "точная остановка"))
-        self.label_15.setText(_translate("sensors", "Вес кабины"))
+        self.label_15.setText(_translate("sensors", "чес кабины"))
         self.weight_down_btn.setText(_translate("sensors", "-"))
         self.cab_weight.setText(_translate("sensors", "450"))
         self.weight_up_btn.setText(_translate("sensors", "+"))
-        self.label_16.setText(_translate("sensors", "Двери"))
+        self.label_16.setText(_translate("sensors", "двери"))
         self.label_17.setText(_translate("sensors", "<||>"))
         self.label_18.setText(_translate("sensors", "|.|"))
         self.label_19.setText(_translate("sensors", ">||<"))

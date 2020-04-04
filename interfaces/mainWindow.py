@@ -12,7 +12,6 @@ from interfaces.mainWindowUI import Ui_MainWindow
 # import common.resources_rc
 
 class MainWindow(QMainWindow, Ui_MainWindow):
-    sig = pyqtSignal(int, bool)
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -55,13 +54,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.sensors.checked_floor.connect(self.computer.checked_floor)
         self.sensors.checked_low_speed.connect(self.computer.checked_low_speed)
         # self.sensors.checked_weight
+        self.sensors.reset_init.connect(self.computer.restart)
         self.sensors.checked_stoppers.connect(self.computer.checked_stoppers)
         self.sensors.checked_floor.connect(self.digitTable.set_floor)
         pass
 
     def _init_connects_liftShaft(self):
         self.liftShaft.updated_pos.connect(self.sensors.check_position)
-        self.liftShaft.calling_lift.connect(self.computer.calling_floor)
+        self.liftShaft.calling_lift.connect(self.computer.calling_on_floor)
 
     def _init_connects_engine(self):
         self.engine.added_len_cable.connect(self.liftShaft.add_len_cable)
@@ -73,4 +73,4 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.computer.set_light_state.connect(self.sensors.set_light_state)
 
     def _init_connects_digitTable(self):
-        pass
+        self.digitTable.calling_lift.connect(self.computer.calling_on_cab)

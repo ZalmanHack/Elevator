@@ -2,6 +2,19 @@ from dataclasses import dataclass
 
 
 @dataclass(frozen=True)
+class Speed:
+    LOW = 60
+    FAST = 20
+
+
+@dataclass(frozen=True)
+class Way:
+    UP = -1
+    STOP = 0
+    DOWN = 1
+
+
+@dataclass(frozen=True)
 class TSensors:
     One: bytes = b'\x10'
     Two: bytes = b'\x20'
@@ -51,4 +64,4 @@ class TStates:
     pre_init: bytes = b'\xF0'
     init: bytes = b'\xF1'
     normal: bytes = b'\xF2'
-    error: bytes = b'\xF3'
+    crash: bytes = b'\xF3'

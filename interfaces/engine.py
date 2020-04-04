@@ -1,16 +1,6 @@
 from PyQt5.QtCore import QObject, pyqtSignal, pyqtSlot
 from PyQt5.Qt import QTimer
-
-
-class Speed:
-    LOW = 60
-    FAST = 20
-
-
-class Way:
-    UP = -1
-    STOP = 0
-    DOWN = 1
+from .Templates import Speed, Way
 
 
 class Engine(QObject):

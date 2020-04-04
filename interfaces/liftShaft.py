@@ -2,14 +2,14 @@ import sys
 from PyQt5.QtCore import QObject, pyqtSignal, pyqtSlot
 from PyQt5.Qt import QWidget
 from interfaces.liftShaftUI import Ui_LiftShaft
-
+from .Templates import TSensors
 
 # import common.resources_rc
 
 class LiftShaft(QWidget, Ui_LiftShaft):
     updated_pos = pyqtSignal(int)
     out_of_rail = pyqtSignal()
-    calling_lift = pyqtSignal(int)  # сигнал о нажатии кнопки с определенного этажа
+    calling_lift = pyqtSignal(bytes)  # сигнал о нажатии кнопки с определенного этажа
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -35,26 +35,26 @@ class LiftShaft(QWidget, Ui_LiftShaft):
 
     @pyqtSlot()
     def on_floor_btn_1_clicked(self):
-        self.calling_lift.emit(1)
+        self.calling_lift.emit(TSensors.One)
 
     @pyqtSlot()
     def on_floor_btn_2_clicked(self):
-        self.calling_lift.emit(2)
+        self.calling_lift.emit(TSensors.Two)
 
     @pyqtSlot()
     def on_floor_btn_3_clicked(self):
-        self.calling_lift.emit(3)
+        self.calling_lift.emit(TSensors.Three)
 
     @pyqtSlot()
     def on_floor_btn_4_clicked(self):
-        self.calling_lift.emit(4)
+        self.calling_lift.emit(TSensors.Four)
 
     @pyqtSlot()
     def on_floor_btn_5_clicked(self):
-        self.calling_lift.emit(5)
+        self.calling_lift.emit(TSensors.Five)
 
-    @pyqtSlot(int, bool)
-    def set_state_btn(self, floor: int = 1, state: bool = False):
+    @pyqtSlot(bytes, bool)
+    def set_state_btn(self, floor: bytes, state: bool = False):
         if state:
             color = [255, 0, 0]
             hover_color = [200, 0, 0]
@@ -77,13 +77,13 @@ class LiftShaft(QWidget, Ui_LiftShaft):
                      "QPushButton:pressed {\n" \
                      "     border-width: 4px;\n" \
                      " }"
-        if floor == 1:
+        if floor == TSensors.One:
             self.floor_btn_1.setStyleSheet(styleSheet)
-        elif floor == 2:
+        elif floor == TSensors.Two:
             self.floor_btn_2.setStyleSheet(styleSheet)
-        elif floor == 3:
+        elif floor == TSensors.Three:
             self.floor_btn_3.setStyleSheet(styleSheet)
-        elif floor == 4:
+        elif floor == TSensors.Four:
             self.floor_btn_4.setStyleSheet(styleSheet)
-        elif floor == 5:
+        elif floor == TSensors.Five:
             self.floor_btn_5.setStyleSheet(styleSheet)

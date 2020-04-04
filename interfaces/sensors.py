@@ -1,14 +1,15 @@
 from PyQt5.QtCore import QObject, pyqtSignal, pyqtSlot, QTimer
 from PyQt5.Qt import QWidget
 from .sensorsUI import Ui_sensors
-from .Templates import TSensors
+from .Templates import TSensors, TStates
 
 
 class Sensors(QWidget, Ui_sensors):
-    checked_floor = pyqtSignal(int)
+    checked_floor = pyqtSignal(bytes)
     checked_weight = pyqtSignal(int)
     checked_stoppers = pyqtSignal()
     checked_low_speed = pyqtSignal()
+    reset_init = pyqtSignal()
 
     def __init__(self, parent=None, floor_height=100, max_weight=400):
         super().__init__(parent)
@@ -16,6 +17,12 @@ class Sensors(QWidget, Ui_sensors):
         self.floor_height = floor_height
         self.max_weight = max_weight
         self.weight = 0
+        self.states = {
+            TStates.pre_init: self.light_init,
+            TStates.init: self.light_init,
+            TStates.normal: self.light_normal,
+            TStates.crash: self.light_crash
+        }
         self.widgets = {TSensors.One: self.light_fl_1,
                         TSensors.Two: self.light_fl_2,
                         TSensors.Three: self.light_fl_3,
@@ -78,8 +85,8 @@ class Sensors(QWidget, Ui_sensors):
     # проверка вхождения в зону конкретного этажа
     def _check_floor(self, len_cable: int = 0):
         if len_cable % self.floor_height == 0:
-            self.checked_floor.emit(int(5 - (len_cable / self.floor_height)))
-            print('_check_floor ' + str(int(5 - (len_cable / self.floor_height))))
+            value = TSensors().get(int(5 - (len_cable / self.floor_height)))
+            self.checked_floor.emit(value)
 
     # проверка вхождения в зону точной остановки
     def _check_low_speed(self, len_cable: int = 0):
@@ -95,8 +102,18 @@ class Sensors(QWidget, Ui_sensors):
         color = self.green
         if not state:
             color = self.red
+
         if value in self.widgets:
             self.widgets[value].setStyleSheet(self.styleSheet + color)
-        if self.timerLight.isActive():
-            self.timerLight.stop()
-        self.timerLight.start(1000)
+            if self.timerLight.isActive():
+                self.timerLight.stop()
+            self.timerLight.start(1000)
+
+        elif value in self.states:
+            for state in self.states.keys():
+                self.states[state].setStyleSheet(self.styleSheet + self.red)
+            self.states[value].setStyleSheet(self.styleSheet + color)
+
+    @pyqtSlot()
+    def on_reset_btn_clicked(self):
+        self.reset_init.emit()
