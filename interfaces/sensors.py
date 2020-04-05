@@ -1,7 +1,7 @@
 from PyQt5.QtCore import QObject, pyqtSignal, pyqtSlot, QTimer
 from PyQt5.Qt import QWidget
 from .sensorsUI import Ui_sensors
-from .Templates import TSensors, TStates
+from .Templates import TSensors, TStates, TDoor
 
 
 class Sensors(QWidget, Ui_sensors):
@@ -10,6 +10,7 @@ class Sensors(QWidget, Ui_sensors):
     checked_stoppers = pyqtSignal()
     checked_low_speed = pyqtSignal()
     reset_init = pyqtSignal()
+    updated_door = pyqtSignal(int)
 
     def __init__(self, parent=None, floor_height=100, max_weight=400):
         super().__init__(parent)
@@ -38,8 +39,12 @@ class Sensors(QWidget, Ui_sensors):
         self.blue = '(0, 155, 255);}'
         self.timerLight = QTimer()
         self.timerWeight = QTimer()
+        self.timerDoor = QTimer()
+        self.door_state = TDoor.CLOSE
+        self.door_is_closing = True
         self.timerLight.timeout.connect(self.timeoutLight)
         self.timerWeight.timeout.connect(self.timeoutWeight)
+        self.timerDoor.timeout.connect(self.timeoutDoor)
         self.timerWeight.start(2000)
 
     # метод окрашивает все зеленые фонарики в синие (по таймеру)
@@ -97,8 +102,6 @@ class Sensors(QWidget, Ui_sensors):
     # изменение цвета фонарика
     @pyqtSlot(bytes, bool)
     def set_light_state(self, value: bytes, state: bool):
-        self.styleSheet = 'QLabel {border-style: outset;border-radius: 8px;border-width: 2px;' \
-                     'border-color: rgb(0, 0, 0);background-color: rgb'
         color = self.green
         if not state:
             color = self.red
@@ -117,3 +120,45 @@ class Sensors(QWidget, Ui_sensors):
     @pyqtSlot()
     def on_reset_btn_clicked(self):
         self.reset_init.emit()
+
+    @pyqtSlot()
+    def on_obstruction_btn_clicked(self):
+        self.door_is_closing = not self.door_is_closing
+        if self.door_is_closing:
+            self.light_dorr_obstruction.setStyleSheet(self.styleSheet + self.red)
+            self.obstruction_btn.setText('вкл')
+        else:
+            self.light_dorr_obstruction.setStyleSheet(self.styleSheet + self.green)
+            self.obstruction_btn.setText('выкл')
+
+    @pyqtSlot()
+    def open_door(self):
+        self.timerDoor.start(1000)
+
+    @pyqtSlot()
+    def timeoutDoor(self):
+        if self.door_state == TDoor.CLOSE:
+            self.door_state = TDoor.OPEN
+        elif self.door_state == TDoor.MIDDLE:
+            if self.door_is_closing:
+                self.door_state = TDoor.CLOSE
+                self.timerDoor.stop()
+        elif self.door_state == TDoor.OPEN:
+            if self.door_is_closing:
+                self.door_state = TDoor.CLOSE
+                self.timerDoor.stop()
+            else:
+                self.door_state = TDoor.MIDDLE
+        self.updated_door.emit(self.door_state)
+        self.set_light_door(self.door_state)
+
+    def set_light_door(self, value: int):
+        self.light_door_op.setStyleSheet(self.styleSheet + self.red)
+        self.light_door_md.setStyleSheet(self.styleSheet + self.red)
+        self.light_door_cl.setStyleSheet(self.styleSheet + self.red)
+        if value == TDoor.CLOSE:
+            self.light_door_cl.setStyleSheet(self.styleSheet + self.green)
+        elif value == TDoor.MIDDLE:
+            self.light_door_md.setStyleSheet(self.styleSheet + self.green)
+        elif value == TDoor.OPEN:
+            self.light_door_op.setStyleSheet(self.styleSheet + self.green)

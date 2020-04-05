@@ -15,6 +15,13 @@ class Way:
 
 
 @dataclass(frozen=True)
+class TDoor:
+    OPEN: int = -1
+    MIDDLE: int = 0
+    CLOSE: int = 1
+
+
+@dataclass(frozen=True)
 class TSensors:
     One: bytes = b'\x10'
     Two: bytes = b'\x20'

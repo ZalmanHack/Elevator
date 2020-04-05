@@ -13,21 +13,21 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_sensors(object):
     def setupUi(self, sensors):
         sensors.setObjectName("sensors")
-        sensors.resize(360, 291)
+        sensors.resize(360, 323)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(sensors.sizePolicy().hasHeightForWidth())
         sensors.setSizePolicy(sizePolicy)
-        sensors.setMinimumSize(QtCore.QSize(360, 291))
-        sensors.setMaximumSize(QtCore.QSize(360, 291))
+        sensors.setMinimumSize(QtCore.QSize(360, 323))
+        sensors.setMaximumSize(QtCore.QSize(360, 323))
         self.verticalLayout = QtWidgets.QVBoxLayout(sensors)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName("verticalLayout")
         self.central = QtWidgets.QWidget(sensors)
-        self.central.setMinimumSize(QtCore.QSize(360, 291))
-        self.central.setMaximumSize(QtCore.QSize(360, 291))
+        self.central.setMinimumSize(QtCore.QSize(360, 323))
+        self.central.setMaximumSize(QtCore.QSize(360, 323))
         self.central.setStyleSheet("QWidget#central {\n"
 "    background-color: qlineargradient(spread:pad, x1:0.216, y1:1, x2:1, y2:0, stop:0 rgba(211, 183, 49, 255), stop:0.494318 rgba(234, 210, 98, 255), stop:0.568182 rgba(242, 239, 224, 255), stop:0.784091 rgba(242, 203, 19, 255), stop:1 rgba(242, 218, 100, 255));\n"
 "\n"
@@ -401,6 +401,44 @@ class Ui_sensors(object):
         self.light_door_cl.setObjectName("light_door_cl")
         self.horizontalLayout_5.addWidget(self.light_door_cl)
         self.verticalLayout_2.addLayout(self.horizontalLayout_5)
+        self.horizontalLayout_7 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_7.setSpacing(10)
+        self.horizontalLayout_7.setObjectName("horizontalLayout_7")
+        self.label_20 = QtWidgets.QLabel(self.widget)
+        self.label_20.setStyleSheet("    font: 75 14pt \"MS Shell Dlg 2\";\n"
+"    color: rgb(240, 240, 240);")
+        self.label_20.setObjectName("label_20")
+        self.horizontalLayout_7.addWidget(self.label_20)
+        self.obstruction_btn = QtWidgets.QPushButton(self.widget)
+        self.obstruction_btn.setMinimumSize(QtCore.QSize(60, 0))
+        self.obstruction_btn.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.obstruction_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.obstruction_btn.setStyleSheet("QPushButton {\n"
+"    border-radius: 8px;\n"
+"    background-color: rgb(0, 0, 0);\n"
+"    font: 75 14pt \"MS Shell Dlg 2\";\n"
+"    color: rgb(255, 0, 0);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(50, 50, 50);\n"
+"}")
+        self.obstruction_btn.setObjectName("obstruction_btn")
+        self.horizontalLayout_7.addWidget(self.obstruction_btn)
+        self.light_dorr_obstruction = QtWidgets.QLabel(self.widget)
+        self.light_dorr_obstruction.setMinimumSize(QtCore.QSize(16, 16))
+        self.light_dorr_obstruction.setMaximumSize(QtCore.QSize(16, 16))
+        self.light_dorr_obstruction.setStyleSheet("QLabel {\n"
+"    border-style: outset;\n"
+"    border-radius: 8px;\n"
+"    border-width: 2px;\n"
+"    border-color: rgb(0, 0, 0);\n"
+"    background-color: rgb(255, 0, 0)\n"
+"}")
+        self.light_dorr_obstruction.setText("")
+        self.light_dorr_obstruction.setObjectName("light_dorr_obstruction")
+        self.horizontalLayout_7.addWidget(self.light_dorr_obstruction)
+        self.verticalLayout_2.addLayout(self.horizontalLayout_7)
         self.verticalLayout_3.addWidget(self.widget)
         self.verticalLayout.addWidget(self.central)
 
@@ -426,3 +464,5 @@ class Ui_sensors(object):
         self.label_17.setText(_translate("sensors", "<||>"))
         self.label_18.setText(_translate("sensors", "|.|"))
         self.label_19.setText(_translate("sensors", ">||<"))
+        self.label_20.setText(_translate("sensors", "Препятствие в дверях"))
+        self.obstruction_btn.setText(_translate("sensors", "вкл"))

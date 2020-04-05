@@ -57,6 +57,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.sensors.reset_init.connect(self.computer.restart)
         self.sensors.checked_stoppers.connect(self.computer.checked_stoppers)
         self.sensors.checked_floor.connect(self.digitTable.set_floor)
+        self.sensors.updated_door.connect(self.computer.updated_door)
         pass
 
     def _init_connects_liftShaft(self):
@@ -73,6 +74,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.computer.set_light_state.connect(self.sensors.set_light_state)
         self.computer.set_btn_cab_state.connect(self.digitTable.set_state_btn)
         self.computer.set_btn_floor_state.connect(self.liftShaft.set_state_btn)
+        self.computer.open_door.connect(self.sensors.open_door)
 
     def _init_connects_digitTable(self):
         self.digitTable.calling_lift.connect(self.computer.calling_on_cab)
