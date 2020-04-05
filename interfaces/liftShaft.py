@@ -22,6 +22,10 @@ class LiftShaft(QWidget, Ui_LiftShaft):
         try:
             assert value == 1 or value == -1, 'value have to be 1 or -1'
             value = self.cab_cable.minimumHeight() + value
+            if value < self.minimum:
+                value = self.minimum
+            elif value > self.maximum:
+                value = self.maximum
             assert self.maximum >= value >= self.minimum, (
                 'OUT OF RAIL!\n    {} >= {} >= {}'.format(self.maximum, value, self.minimum))
             self.cab_cable.setMinimumHeight(value)

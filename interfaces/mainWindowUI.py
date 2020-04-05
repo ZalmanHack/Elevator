@@ -38,7 +38,7 @@ class Ui_MainWindow(object):
         self.main_widget.setMaximumSize(QtCore.QSize(528, 606))
         self.main_widget.setStyleSheet("QWidget#main_widget {\n"
 "    border-radius: 10px;\n"
-"    background-color: rgb(112, 112, 112);\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 133), stop:1 rgba(0, 0, 0, 0))\n"
 "}")
         self.main_widget.setObjectName("main_widget")
         self.gridLayout.addWidget(self.main_widget, 2, 1, 1, 1)

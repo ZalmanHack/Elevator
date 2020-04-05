@@ -13,16 +13,16 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_digital_table(object):
     def setupUi(self, digital_table):
         digital_table.setObjectName("digital_table")
-        digital_table.resize(360, 118)
-        digital_table.setMinimumSize(QtCore.QSize(360, 118))
-        digital_table.setMaximumSize(QtCore.QSize(360, 118))
+        digital_table.resize(360, 156)
+        digital_table.setMinimumSize(QtCore.QSize(360, 156))
+        digital_table.setMaximumSize(QtCore.QSize(360, 156))
         self.verticalLayout = QtWidgets.QVBoxLayout(digital_table)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName("verticalLayout")
         self.central = QtWidgets.QWidget(digital_table)
-        self.central.setMinimumSize(QtCore.QSize(360, 118))
-        self.central.setMaximumSize(QtCore.QSize(360, 118))
+        self.central.setMinimumSize(QtCore.QSize(360, 156))
+        self.central.setMaximumSize(QtCore.QSize(360, 156))
         self.central.setStyleSheet("QWidget#central {\n"
 "    background-color: qlineargradient(spread:pad, x1:0.216, y1:1, x2:1, y2:0, stop:0 rgba(211, 183, 49, 255), stop:0.494318 rgba(234, 210, 98, 255), stop:0.568182 rgba(242, 239, 224, 255), stop:0.784091 rgba(242, 203, 19, 255), stop:1 rgba(242, 218, 100, 255));\n"
 "\n"
@@ -45,6 +45,35 @@ class Ui_digital_table(object):
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         self.verticalLayout_2.addWidget(self.label)
+        self.widget_2 = QtWidgets.QWidget(self.central)
+        self.widget_2.setMinimumSize(QtCore.QSize(0, 30))
+        self.widget_2.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.widget_2.setObjectName("widget_2")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.widget_2)
+        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_2.setSpacing(0)
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        spacerItem = QtWidgets.QSpacerItem(27, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_2.addItem(spacerItem)
+        self.label_info_table = QtWidgets.QLabel(self.widget_2)
+        self.label_info_table.setMinimumSize(QtCore.QSize(280, 30))
+        self.label_info_table.setMaximumSize(QtCore.QSize(280, 30))
+        self.label_info_table.setStyleSheet("QLabel {\n"
+"    background-color: rgb(83, 83, 83);\n"
+"    font: 75 15pt \"MS Shell Dlg 2\";\n"
+"    color: rgb(150, 150, 150);\n"
+"    border-style: outset;\n"
+"    border-width: 3px;\n"
+"    border-color: black;\n"
+"}")
+        self.label_info_table.setText("")
+        self.label_info_table.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_info_table.setWordWrap(False)
+        self.label_info_table.setObjectName("label_info_table")
+        self.horizontalLayout_2.addWidget(self.label_info_table)
+        spacerItem1 = QtWidgets.QSpacerItem(27, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_2.addItem(spacerItem1)
+        self.verticalLayout_2.addWidget(self.widget_2)
         self.digital = QtWidgets.QWidget(self.central)
         self.digital.setMinimumSize(QtCore.QSize(340, 0))
         self.digital.setMaximumSize(QtCore.QSize(340, 16777215))
@@ -301,4 +330,3 @@ class Ui_digital_table(object):
         self.floor_lb_4.setText(_translate("digital_table", "4"))
         self.floor_lb_5.setText(_translate("digital_table", "5"))
 import common.resources_rc
-

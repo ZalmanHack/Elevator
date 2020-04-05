@@ -1,10 +1,10 @@
 from dataclasses import dataclass
 
 
-@dataclass(frozen=True)
+@dataclass(frozen=False)
 class Speed:
-    LOW = 10 # 60
-    FAST = 2 # 20
+    LOW = 20 # 60
+    FAST = 10 # 20
 
 
 @dataclass(frozen=True)
@@ -44,26 +44,17 @@ class TSensors:
         elif value == 5:
             return self.Five
 
-
-@dataclass(frozen=True)
-class TFloors:
-    One: bytes = b'\x01'
-    Two: bytes = b'\x02'
-    Three: bytes = b'\x03'
-    Four: bytes = b'\x04'
-    Five: bytes = b'\x05'
-
-    def get(self, value: int):
-        if value == 1:
-            return self.One
-        elif value == 2:
-            return self.Two
-        elif value == 3:
-            return self.Three
-        elif value == 4:
-            return self.Four
-        elif value == 5:
-            return self.Five
+    def get_int(self, value: bytes):
+        if value == self.One:
+            return 1
+        elif value == self.Two:
+            return 2
+        elif value == self.Three:
+            return 3
+        elif value == self.Four:
+            return 4
+        elif value == self.Five:
+            return 5
 
 
 @dataclass(frozen=True)

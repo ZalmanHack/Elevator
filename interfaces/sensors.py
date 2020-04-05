@@ -6,11 +6,12 @@ from .Templates import TSensors, TStates, TDoor
 
 class Sensors(QWidget, Ui_sensors):
     checked_floor = pyqtSignal(bytes)
-    checked_weight = pyqtSignal(int)
+    checked_weight = pyqtSignal(bool)
     checked_stoppers = pyqtSignal()
     checked_low_speed = pyqtSignal()
     reset_init = pyqtSignal()
     updated_door = pyqtSignal(int)
+    set_table_info = pyqtSignal(str)
 
     def __init__(self, parent=None, floor_height=100, max_weight=400):
         super().__init__(parent)
@@ -18,6 +19,7 @@ class Sensors(QWidget, Ui_sensors):
         self.floor_height = floor_height
         self.max_weight = max_weight
         self.weight = 0
+        self.cab_weight.setText(str(self.weight))
         self.states = {
             TStates.pre_init: self.light_init,
             TStates.init: self.light_init,
@@ -30,8 +32,7 @@ class Sensors(QWidget, Ui_sensors):
                         TSensors.Four: self.light_fl_4,
                         TSensors.Five: self.light_fl_5,
                         TSensors.LSpeed: self.light_ls,
-                        TSensors.Stopper: self.light_stp,
-                        TSensors.Weight: self.light_cw}
+                        TSensors.Stopper: self.light_stp}
         self.styleSheet = 'QLabel {border-style: outset;border-radius: 8px;border-width: 2px;' \
                           'border-color: rgb(0, 0, 0);background-color: rgb'
         self.red = '(255, 0, 0);}'
@@ -42,10 +43,11 @@ class Sensors(QWidget, Ui_sensors):
         self.timerDoor = QTimer()
         self.door_state = TDoor.CLOSE
         self.door_is_closing = True
+        self.info_table_weight_cleaned = False
         self.timerLight.timeout.connect(self.timeoutLight)
         self.timerWeight.timeout.connect(self.timeoutWeight)
         self.timerDoor.timeout.connect(self.timeoutDoor)
-        self.timerWeight.start(2000)
+        self.timerWeight.start(100)
 
     # метод окрашивает все зеленые фонарики в синие (по таймеру)
     @pyqtSlot()
@@ -55,20 +57,34 @@ class Sensors(QWidget, Ui_sensors):
                 obj.setStyleSheet(self.styleSheet + self.blue)
         self.timerLight.stop()
 
+
+
     # метод проверяет вес кабины (по таймеру)
     @pyqtSlot()
     def timeoutWeight(self):
         if self.weight - self.max_weight > 0:
-            self.set_light_state(TSensors.Weight, True)
+            self.set_light_state(TSensors.Weight, False)
+            self.checked_weight.emit(False)
+            self.set_table_info.emit('Кабина перегружена!')
+            self.info_table_weight_cleaned = False
         else:
             self.set_light_state(TSensors.Weight, True)
+            self.checked_weight.emit(True)
+            if not self.info_table_weight_cleaned:
+                self.set_table_info.emit('')
+                self.info_table_weight_cleaned = True
 
+    @pyqtSlot()
+    def on_weight_up_btn_clicked(self):
+        if self.weight <= 800 - 50:
+            self.weight += 50
+            self.cab_weight.setText(str(self.weight))
 
-    # сигнал на этот слот поступает при изменении веса кабинв
-    @pyqtSlot(int)
-    def check_weight(self, weight: int = 0):
-        # сли <= 0 то вес в норме, если > 0 то превышение
-        self.checked_weight.emit(weight - self.max_weight)
+    @pyqtSlot()
+    def on_weight_down_btn_clicked(self):
+        if self.weight >= 50:
+            self.weight -= 50
+            self.cab_weight.setText(str(self.weight))
 
     # проверка вхождения в зону аерхнего или нижнего стопора (метод для компьютера)
     @pyqtSlot()
@@ -112,6 +128,9 @@ class Sensors(QWidget, Ui_sensors):
                 self.timerLight.stop()
             self.timerLight.start(1000)
 
+        if value == TSensors.Weight:
+            self.light_cw.setStyleSheet(self.styleSheet + color)
+
         elif value in self.states:
             for state in self.states.keys():
                 self.states[state].setStyleSheet(self.styleSheet + self.red)
@@ -139,16 +158,25 @@ class Sensors(QWidget, Ui_sensors):
     def timeoutDoor(self):
         if self.door_state == TDoor.CLOSE:
             self.door_state = TDoor.OPEN
+            self.timerDoor.stop()
+            self.timerDoor.start(3000)
         elif self.door_state == TDoor.MIDDLE:
             if self.door_is_closing:
-                self.door_state = TDoor.CLOSE
-                self.timerDoor.stop()
-        elif self.door_state == TDoor.OPEN:
-            if self.door_is_closing:
+                self.set_table_info.emit('')
                 self.door_state = TDoor.CLOSE
                 self.timerDoor.stop()
             else:
+                self.set_table_info.emit('Освободите дверной проём!')
+        elif self.door_state == TDoor.OPEN:
+            self.timerDoor.stop()
+            self.timerDoor.start(1000)
+            if self.door_is_closing and self.weight <= self.max_weight:
+                self.door_state = TDoor.CLOSE
+
+                self.timerDoor.stop()
+            elif self.weight <= self.max_weight:
                 self.door_state = TDoor.MIDDLE
+
         self.updated_door.emit(self.door_state)
         self.set_light_door(self.door_state)
 

@@ -1,5 +1,5 @@
 from PyQt5.QtCore import QObject, pyqtSignal, pyqtSlot
-from PyQt5.Qt import QWidget
+from PyQt5.Qt import QWidget, QTimer
 from .digitalTableUI import Ui_digital_table
 from .Templates import TSensors, Way
 
@@ -11,6 +11,9 @@ class DigitalTable(QWidget, Ui_digital_table):
         super().__init__(parent)
         self.setupUi(self)
         self.pointer = None
+        self.info_table_state = False
+        self.timerInfo = QTimer()
+        self.timerInfo.timeout.connect(self.timeoutInfo)
         self.array = {
             TSensors.One: self.floor_lb_1,
             TSensors.Two: self.floor_lb_2,
@@ -111,3 +114,44 @@ class DigitalTable(QWidget, Ui_digital_table):
             self.floor_btn_4.setStyleSheet(styleSheet)
         elif floor == TSensors.Five:
             self.floor_btn_5.setStyleSheet(styleSheet)
+
+    @pyqtSlot(str)
+    def set_table_info(self, text: str):
+        self.label_info_table.setText(text)
+        if len(text) == 0 and self.timerInfo.isActive():
+            self.timerInfo.stop()
+            self.label_info_table.setStyleSheet("QLabel {"
+                                                "	background-color: rgb(83, 83, 83);"
+                                                "	font: 75 15pt 'MS Shell Dlg 2';"
+                                                "	color: rgb(150, 150, 150);"
+                                                "	border-style: outset;"
+                                                "	border-width: 3px;"
+                                                "	border-color: black;"
+                                                "}")
+        elif len(text) != 0:
+            if not self.timerInfo.isActive():
+                self.timerInfo.start(500)
+
+
+    @pyqtSlot()
+    def timeoutInfo(self):
+        if self.info_table_state:
+            self.info_table_state = not self.info_table_state
+            self.label_info_table.setStyleSheet("QLabel {"
+                                                "	background-color: rgb(83, 83, 83);"
+                                                "	font: 75 15pt 'MS Shell Dlg 2';"
+                                                "	color: rgb(150, 150, 150);"
+                                                "	border-style: outset;"
+                                                "	border-width: 3px;"
+                                                "	border-color: black;"
+                                                "}")
+        else:
+            self.info_table_state = not self.info_table_state
+            self.label_info_table.setStyleSheet("QLabel {"
+                                                "	background-color: rgb(255, 255, 255);"
+                                                "	font: 75 15pt 'MS Shell Dlg 2';"
+                                                "	color: rgb(0, 0, 0);"
+                                                "	border-style: outset;"
+                                                "	border-width: 3px;"
+                                                "	border-color: black;"
+                                                "}")

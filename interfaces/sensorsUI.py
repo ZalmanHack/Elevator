@@ -54,14 +54,14 @@ class Ui_sensors(object):
         self.label.setObjectName("label")
         self.horizontalLayout_6.addWidget(self.label)
         self.reset_btn = QtWidgets.QPushButton(self.central)
-        self.reset_btn.setMinimumSize(QtCore.QSize(23, 0))
-        self.reset_btn.setMaximumSize(QtCore.QSize(100, 16777215))
+        self.reset_btn.setMinimumSize(QtCore.QSize(23, 23))
+        self.reset_btn.setMaximumSize(QtCore.QSize(100, 23))
         self.reset_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.reset_btn.setStyleSheet("QPushButton {\n"
 "    border-radius: 8px;\n"
 "    background-color: rgb(0, 0, 0);\n"
-"    font: 75 14pt \"MS Shell Dlg 2\";\n"
-"    color: rgb(255, 0, 0);\n"
+"    font: 75 12pt \"MS Shell Dlg 2\";\n"
+"    color: rgb(255, 0, 0)\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -278,14 +278,14 @@ class Ui_sensors(object):
         self.label_15.setObjectName("label_15")
         self.horizontalLayout_4.addWidget(self.label_15)
         self.weight_down_btn = QtWidgets.QPushButton(self.widget)
-        self.weight_down_btn.setMinimumSize(QtCore.QSize(23, 0))
-        self.weight_down_btn.setMaximumSize(QtCore.QSize(23, 16777215))
+        self.weight_down_btn.setMinimumSize(QtCore.QSize(23, 23))
+        self.weight_down_btn.setMaximumSize(QtCore.QSize(23, 23))
         self.weight_down_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.weight_down_btn.setStyleSheet("QPushButton {\n"
 "    border-radius: 8px;\n"
 "    background-color: rgb(0, 0, 0);\n"
-"    font: 75 14pt \"MS Shell Dlg 2\";\n"
-"    color: rgb(255, 0, 0);\n"
+"    font: 75 12pt \"MS Shell Dlg 2\";\n"
+"    color: rgb(255, 0, 0)\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -299,21 +299,21 @@ class Ui_sensors(object):
         self.cab_weight.setStyleSheet("QLabel {\n"
 "    border-radius: 8px;\n"
 "    background-color: rgb(0, 0, 0);\n"
-"    font: 75 14pt \"MS Shell Dlg 2\";\n"
-"    color: rgb(255, 0, 0);\n"
+"    font: 75 12pt \"MS Shell Dlg 2\";\n"
+"    color: rgb(255, 0, 0)\n"
 "}")
         self.cab_weight.setAlignment(QtCore.Qt.AlignCenter)
         self.cab_weight.setObjectName("cab_weight")
         self.horizontalLayout_4.addWidget(self.cab_weight)
         self.weight_up_btn = QtWidgets.QPushButton(self.widget)
-        self.weight_up_btn.setMinimumSize(QtCore.QSize(23, 0))
-        self.weight_up_btn.setMaximumSize(QtCore.QSize(23, 16777215))
+        self.weight_up_btn.setMinimumSize(QtCore.QSize(23, 23))
+        self.weight_up_btn.setMaximumSize(QtCore.QSize(23, 23))
         self.weight_up_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.weight_up_btn.setStyleSheet("QPushButton {\n"
 "    border-radius: 8px;\n"
 "    background-color: rgb(0, 0, 0);\n"
-"    font: 75 14pt \"MS Shell Dlg 2\";\n"
-"    color: rgb(255, 0, 0);\n"
+"    font: 75 12pt \"MS Shell Dlg 2\";\n"
+"    color: rgb(255, 0, 0)\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -410,14 +410,14 @@ class Ui_sensors(object):
         self.label_20.setObjectName("label_20")
         self.horizontalLayout_7.addWidget(self.label_20)
         self.obstruction_btn = QtWidgets.QPushButton(self.widget)
-        self.obstruction_btn.setMinimumSize(QtCore.QSize(60, 0))
-        self.obstruction_btn.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.obstruction_btn.setMinimumSize(QtCore.QSize(60, 23))
+        self.obstruction_btn.setMaximumSize(QtCore.QSize(60, 23))
         self.obstruction_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.obstruction_btn.setStyleSheet("QPushButton {\n"
 "    border-radius: 8px;\n"
 "    background-color: rgb(0, 0, 0);\n"
-"    font: 75 14pt \"MS Shell Dlg 2\";\n"
-"    color: rgb(255, 0, 0);\n"
+"    font: 75 12pt \"MS Shell Dlg 2\";\n"
+"    color: rgb(255, 0, 0)\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -456,7 +456,7 @@ class Ui_sensors(object):
         self.label_14.setText(_translate("sensors", "стопоры"))
         self.label_12.setText(_translate("sensors", "предварительное торможение"))
         self.label_13.setText(_translate("sensors", "точная остановка"))
-        self.label_15.setText(_translate("sensors", "чес кабины"))
+        self.label_15.setText(_translate("sensors", "вес кабины"))
         self.weight_down_btn.setText(_translate("sensors", "-"))
         self.cab_weight.setText(_translate("sensors", "450"))
         self.weight_up_btn.setText(_translate("sensors", "+"))

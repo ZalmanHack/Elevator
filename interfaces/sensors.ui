@@ -124,13 +124,13 @@
           <property name="minimumSize">
            <size>
             <width>23</width>
-            <height>0</height>
+            <height>23</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
             <width>100</width>
-            <height>16777215</height>
+            <height>23</height>
            </size>
           </property>
           <property name="cursor">
@@ -140,8 +140,8 @@
            <string notr="true">QPushButton {
 	border-radius: 8px;
 	background-color: rgb(0, 0, 0);
-	font: 75 14pt &quot;MS Shell Dlg 2&quot;;
-	color: rgb(255, 0, 0);
+	font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+	color: rgb(255, 0, 0)
 }
 
 QPushButton:hover {
@@ -598,7 +598,7 @@ QPushButton:hover {
 	color: rgb(240, 240, 240);</string>
              </property>
              <property name="text">
-              <string>чес кабины</string>
+              <string>вес кабины</string>
              </property>
             </widget>
            </item>
@@ -607,13 +607,13 @@ QPushButton:hover {
              <property name="minimumSize">
               <size>
                <width>23</width>
-               <height>0</height>
+               <height>23</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
                <width>23</width>
-               <height>16777215</height>
+               <height>23</height>
               </size>
              </property>
              <property name="cursor">
@@ -623,8 +623,8 @@ QPushButton:hover {
               <string notr="true">QPushButton {
 	border-radius: 8px;
 	background-color: rgb(0, 0, 0);
-	font: 75 14pt &quot;MS Shell Dlg 2&quot;;
-	color: rgb(255, 0, 0);
+	font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+	color: rgb(255, 0, 0)
 }
 
 QPushButton:hover {
@@ -654,8 +654,8 @@ QPushButton:hover {
               <string notr="true">QLabel {
 	border-radius: 8px;
 	background-color: rgb(0, 0, 0);
-	font: 75 14pt &quot;MS Shell Dlg 2&quot;;
-	color: rgb(255, 0, 0);
+	font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+	color: rgb(255, 0, 0)
 }</string>
              </property>
              <property name="text">
@@ -671,13 +671,13 @@ QPushButton:hover {
              <property name="minimumSize">
               <size>
                <width>23</width>
-               <height>0</height>
+               <height>23</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
                <width>23</width>
-               <height>16777215</height>
+               <height>23</height>
               </size>
              </property>
              <property name="cursor">
@@ -687,8 +687,8 @@ QPushButton:hover {
               <string notr="true">QPushButton {
 	border-radius: 8px;
 	background-color: rgb(0, 0, 0);
-	font: 75 14pt &quot;MS Shell Dlg 2&quot;;
-	color: rgb(255, 0, 0);
+	font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+	color: rgb(255, 0, 0)
 }
 
 QPushButton:hover {
@@ -895,13 +895,13 @@ QPushButton:hover {
              <property name="minimumSize">
               <size>
                <width>60</width>
-               <height>0</height>
+               <height>23</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
                <width>60</width>
-               <height>16777215</height>
+               <height>23</height>
               </size>
              </property>
              <property name="cursor">
@@ -911,8 +911,8 @@ QPushButton:hover {
               <string notr="true">QPushButton {
 	border-radius: 8px;
 	background-color: rgb(0, 0, 0);
-	font: 75 14pt &quot;MS Shell Dlg 2&quot;;
-	color: rgb(255, 0, 0);
+	font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+	color: rgb(255, 0, 0)
 }
 
 QPushButton:hover {
