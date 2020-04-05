@@ -3,8 +3,8 @@ from dataclasses import dataclass
 
 @dataclass(frozen=False)
 class Speed:
-    LOW = 20 # 60
-    FAST = 10 # 20
+    LOW = 60
+    FAST = 20
 
 
 @dataclass(frozen=True)

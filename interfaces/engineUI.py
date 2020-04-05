@@ -157,11 +157,11 @@ class Ui_engine(object):
     def retranslateUi(self, engine):
         _translate = QtCore.QCoreApplication.translate
         engine.setWindowTitle(_translate("engine", "Form"))
-        self.label_15.setText(_translate("engine", "Скорость 1 (%)"))
+        self.label_15.setText(_translate("engine", "скорость 1 (%)"))
         self.down_btn_1.setText(_translate("engine", "-"))
-        self.lbl_speed_1.setText(_translate("engine", "50"))
+        self.lbl_speed_1.setText(_translate("engine", "80"))
         self.up_btn_1.setText(_translate("engine", "+"))
-        self.label_16.setText(_translate("engine", "Скорость 2 (%)"))
+        self.label_16.setText(_translate("engine", "скорость 2 (%)"))
         self.down_btn_2.setText(_translate("engine", "-"))
-        self.lbl_speed_2.setText(_translate("engine", "25"))
+        self.lbl_speed_2.setText(_translate("engine", "40"))
         self.up_btn_2.setText(_translate("engine", "+"))
